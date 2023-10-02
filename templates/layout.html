@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <title>Title</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+      <link rel="stylesheet" href="/static/layout.css" />
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Raleway:wght@100&display=swap" rel="stylesheet" />
+      <script src="https://kit.fontawesome.com/a92e2a8260.js" crossorigin="anonymous"></script>
+   </head>
+
+   <body class="activity bp-user my-activity just-me row">
+      <nav class="col-1 navbar flex-column bg-dark navbar-dark shadow-lg" style="font-family: calibri">
+         <a class="navbar-brand" href="#"><strong>Nova</strong></a>
+         <ul class="nav navbar-nav" style="padding-left: 15%">
+            <li class="nav-item" style="font-size: 18px; margin-bottom: 8%">
+               <a class="nav-link" href="/index">
+                  <i class="fas fa-home fa-sm"></i><br /><br />
+                  Index
+               </a>
+            </li>
+
+            <li class="nav-item" style="font-size: 18px; margin-bottom: 8%">
+               <a class="nav-link" href="/add">
+                  <i class="fas fa-plus-square fa-xs"></i> <br />
+                  Add
+               </a>
+            </li>
+            <li class="nav-item" style="font-size: 18px; margin-bottom: 8%">
+               <a class="nav-link" href="/history">
+                  <i class="fas fa-history fa-xs"></i> <br />
+                  History
+               </a>
+            </li>
+            <li class="nav-item" style="font-size: 18px; margin-bottom: 8%">
+               <a class="nav-link" href="/scoreBoard">
+                  <i class="fas fa-home fa-sm"></i><br /><br />
+                  Scores
+               </a>
+            </li>
+            <li class="nav-item" style="font-size: 18px; margin-bottom: 8%">
+               <a class="nav-link" href="/profile">
+                  <i class="fas fa-user fa-sm"></i><br /><br />
+                  Profile
+               </a>
+            </li>
+            <br />
+            <hr />
+            <li class="nav-item" style="font-size: 18px; margin-bottom: 8%">
+               <a class="nav-link" href="/logout">
+                  <i class="fas fa-xmark fa-sm"></i><br /><br />
+                  Logout
+               </a>
+            </li>
+            <br /><br /><br /><br /><br /><br /><br />
+            <br /><br /><br /><br /><br /><br /><br />
+            <br /><br /><br /><br /><br /><br /><br />
+            <br /><br /><br /><br /><br /><br /><br />
+            <br />
+            <br />
+         </ul>
+      </nav>
+
+      <div class="col-11 content">{% block content%} {% endblock%}</div>
+   </body>
+</html>

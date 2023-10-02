@@ -1,0 +1,26 @@
+{% extends "layout.html"%} {% block content%}
+
+<div>
+   <div class="section-banner" style="background: url(&#39;https://odindesignthemes.com/vikinger-theme/wp-content/themes/vikinger/img/banner/banner-bg.png&#39;) center center / cover no-repeat">
+      <img class="section-banner-icon" src="/static/forums-icon.png" alt="section-icon" />
+      <p class="section-banner-title">Score board</p>
+      <p class="section-banner-text">See where you stand in the community</p>
+   </div>
+   <table class="table table-striped table-hover">
+      <thead>
+         <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Score</th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr>
+            {% for i in rank_user %}
+            <td scope="row">{{i.username}}</td>
+            <td>{{i.score}}</td>
+         </tr>
+         {% endfor %}
+      </tbody>
+   </table>
+</div>
+{% endblock%}

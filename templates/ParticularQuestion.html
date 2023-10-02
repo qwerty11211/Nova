@@ -1,0 +1,109 @@
+{% extends "layout.html"%} {% block content%}
+<div class="section-banner" style="background: url(&#39;https://odindesignthemes.com/vikinger-theme/wp-content/themes/vikinger/img/banner/banner-bg.png&#39;) center center / cover no-repeat">
+   <img class="section-banner-icon" src="/static/memberships-icon.png" alt="section-icon" />
+   <p class="section-banner-title">Forums</p>
+   <p class="section-banner-text">See all the details regarding this post</p>
+</div>
+<br><br>
+<div class="widget-box no-padding row"  style="width:90%; margin-left:5%;">
+   <div class="col-2">
+      <img src="{{img}}" alt="" style="border-radius:60%;margin-left:5%;margin-top:10%" width="100"
+         style="height:100px">
+   </div>
+   <div class="col-10">
+      <div class="widget-box-status">
+         <div class="widget-box-status-header">
+            <div class="user-status-title medium">
+               <b>question</b>
+               <span> 1 year ago </span>
+            </div>
+         </div>
+         <div class="widget-box-status-content">
+            <div class="widget-box-status-html-content">
+               <h3>{{ question.question }}</h3>
+            </div>
+            <span class="badge--md badge-light badge-pill">
+            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-lightning-fill" fill="orange"
+               xmlns="http://www.w3.org/2000/svg">
+               <path fill-rule="evenodd"
+                  d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"/>
+            </svg>
+            {{question.pay}}
+            <div class="widget-box-status-html-content user-status-text">{{question.shortdescription }}</div>
+         </div>
+      </div>
+      <div class="post-footer">
+         <div class="content-actions">
+            <div class="content-action">
+               <div class="meta-line">
+                  <div class="reaction-item-list meta-line-list">
+                     <div class="reaction-item-wrap">
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="post-comments"></div>
+      </div>
+   </div>
+</div>
+<br>
+<div style="width:90%; margin-left:5%;background-color: white; padding:2%; border-radius:1%">
+   <h5 class="text-muted">2 people have bid for this issue</h5>
+   <br>
+   <ul>
+      {% for i in response %}
+      <div class="media mb-4" style="color:#495057">
+         <img class="d-flex mr-3 rounded-circle" src="{{i.image}}" alt="" width="100" height="100">
+         <div class="media-body">
+            <div class="ml-7">
+               <h5 style="color:black"><strong>  {{ i.username }}</strong></h5>
+               <div style="font-size:15px"> {{ i.description }}</div>
+               <br><br>Suggested amount : 
+               <span class="badge--md badge-light badge-pill">
+                  <svg
+                     width="1em" height="1em"
+                     viewBox="0 0 16 16"
+                     class="bi bi-lightning-fill"
+                     fill="orange"
+                     xmlns="http://www.w3.org/2000/svg">
+                     <path fill-rule="evenodd"
+                        d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"/>
+                  </svg>
+                  {{ i.pay }} 
+               </span>
+               {% if isSamePerson == 'True' %}
+               <span style="color:white">Lorem ips</span>
+               <div style="width:10%">
+               <button type="submit" class="btn btn-danger btn-sm" value="{{ i.id }}">
+                 
+               <a href="{{ url_for('assign', qid=question.id, userid=i.id, questionName=question.question, assignedName=i.username) }}"
+                  style="color:white;">Assign</a>
+               </button>
+            </div>
+               {% endif %}
+               <hr>
+            </div>
+         </div>
+      </div>
+      {% endfor %}
+      </li>
+   </ul>
+   <br>
+   {% if isSamePerson == 'False' %}
+   <div class="card my-4">
+      <h5 class="card-header">Leave a Comment:</h5>
+      <div class="card-body">
+         <form method="post">
+            <div class="form-group">
+               <textarea placeholder="Tell them why you are a good fit." class="form-control" rows="3"
+                  name="description"></textarea><br>
+               <textarea placeholder="Expected amount" class="form-control" rows="1" name="pay"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:30%;margin-left:35%">Submit</button>
+         </form>
+      </div>
+   </div>
+   {% endif %}
+</div>
+{% endblock%}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <title>Title</title>
+      <link rel="stylesheet" href="/static/layout.css" />
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+   </head>
+   <body>
+      <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+         <a class="navbar-brand" href="/home">Nova</a>
+         <ul class="nav navbar-nav">
+            <li class="nav-item">
+               <a class="nav-link" href="/login">Login</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="/register">Register</a>
+            </li>
+         </ul>
+      </nav>
+      <br />
+      <br />
+      <div class="container login">
+         <div class="row">
+            <div class="col-6">
+               <img
+                  src="https://github-production-user-asset-6210df.s3.amazonaws.com/43414928/257064351-f9bda6be-e606-4232-b191-7b91ca3bc788.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230730%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230730T164925Z&X-Amz-Expires=300&X-Amz-Signature=f24d42f1cacb7acc25584d0d34adc3074be76062f62f05b61a923e9b5483bff7&X-Amz-SignedHeaders=host&actor_id=43414928&key_id=0&repo_id=672174451"
+                  height="400"
+                  alt=""
+               />
+            </div>
+            <div class="col-5">
+               <br /><br />
+               <h2>Login page</h2>
+               <br />
+               <form action="" method="post">
+                  <div class="form-group">
+                     <label>Username</label>
+                     <input type="text" name="username" class="form-control" placeholder="Enter username" />
+                  </div>
+                  <div class="form-group">
+                     <label for="exampleInputPassword1">Password</label>
+                     <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
+                  </div>
+                  <button type="submit" class="btn btn-dark">Submit</button>
+               </form>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

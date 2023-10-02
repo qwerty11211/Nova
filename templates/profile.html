@@ -1,0 +1,50 @@
+{% extends "layout.html"%} {% block content%}
+<div class="section-banner" style="background: url(&#39;https://odindesignthemes.com/vikinger-theme/wp-content/themes/vikinger/img/banner/banner-bg.png&#39;) center center / cover no-repeat">
+   <img class="section-banner-icon" src="/static/forums-icon.png" alt="section-icon" />
+   <p class="section-banner-title">Profile</p>
+   <p class="section-banner-text">View your awesome profile</p>
+</div>
+<div class="row">
+   <section class="profile_container">
+      <div class="profile_img_section">
+         <img class="profile_img-LG" src="https://cdn.idntimes.com/content-images/community/2020/10/122163576-262420488513552-863075192792965334-n-f95e3dd6d25d3618eb9f1b3b9bcc5796.jpg" />
+      </div>
+
+      <div class="profile_desc_section">
+         <h2>{{ user.username }}</h2>
+
+         <p class="description">{{ user.about }} Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+
+         <div class="interests">
+            <span class="interests_item">Technology</span>
+            <span class="interests_item">Management</span>
+            <span class="interests_item">Leadership</span>
+         </div>
+         <br />
+         {% if user.resume %}
+         <p>Resume URL: {{ user.resume }}</p>
+         <a href="{{ user.resume }}" target="_blank">View Resume</a>
+         {% else %}
+         <form method="POST" action="{{ url_for('profile') }}">
+            <label for="resume_url">Add resume:</label>
+            <input type="text" id="resume_url" name="resume_url" required />
+            <button type="submit">Submit</button>
+         </form>
+         {% endif %}
+         <br /><br />
+         <h3>My NFT collection</h3>
+         <div class="row">
+            {% for nft in nft_list %}
+            <div class="col-md-3" style="box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); margin: 3%; background: #fff; padding: 2%; border-radius: 4%">
+               <img class="point-item-line-image" style="margin-left: 30%" height="25" src="/static/Gem.png" alt="gem-credit" />
+               <strong>Transaction Hash:</strong>d {{ nft["Transaction Hash"] }}<br />
+               <strong>Contract Name:</strong> d{{ nft["Contract Name"] }}<br />
+               <strong>Contract Symbol:</strong> {{ nft["Contract Symbol"] }}<br />
+            </div>
+
+            {% endfor %}
+         </div>
+      </div>
+   </section>
+</div>
+{% endblock%}
